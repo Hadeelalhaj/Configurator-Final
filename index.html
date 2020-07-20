@@ -11,12 +11,19 @@
   <div class="content-wrapper">
 
     <main class="main-screen">
-
-      <article id="cone-empty" class="cone-screen">
-        <img class="choice-result" src="assets/cone-emty.png" alt="cone">
+      <article id="cone-display" class="cone-screen">
         <h1>Choose a cone</h1>
-      </article>
+        <img class="cone-choice-result" id="coneEmpty" src="assets/cone-emty.png" alt="cone">
+        <img class="cone-choice-result" id="coneRecEempty" src="assets/cone-rec-emty.png" alt="cone-rec">
+        <img class="cone-choice-result" id="coneFlavLemon" src="assets/cone-lemon.png" alt="flav-lemon">
+        <img class="cone-choice-result" id="coneFlavRecLemon" src="assets/cone-rec-lemon.png" alt="cone-rec-lemon">
+        <img class="cone-choice-result" id="coneFlavStrawberry" src="assets/cone-strawberry.png" alt="flav-strawberry">
+        <img class="cone-choice-result" id="coneFlavRecStrawberry" src="assets/cone-rec-strawberry.png" alt="flav-rec-strawberry">
+        <img class="cone-choice-result" id="coneFlavChoco" src="assets/cone-choco.png" alt="flav-chocolate">
+        <img class="cone-choice-result" id="coneFlavRecChoco" src="assets/cone-rec-choco.png" alt="flav-rec-chocolate">
 
+      </article>
+<!-- 
       <article id="flav-lemon" class="cone-screen">
         <img class="choice-result" src="assets/cone-lemon.png" alt="flav-lemon">
         <h1>Lemon</h1>
@@ -33,7 +40,7 @@
         <img class="choice-result" src="assets/cone-choco.png" alt="flav-chocolate">
         <h1>Chocolate</h1>
 
-      </article>
+      </article> -->
 
     </main>
 
@@ -41,15 +48,15 @@
   
       <h2>Choose your biscuit :</h2>
       <div class="link-wrapper">
-        <a href="#cone-empty" id="btnCone"><img class="btn" src="assets/cone-1.png" alt="cone"></a>
-        <a href="#" id="btnRecCone"><img class="btn" src="assets/cone-2.png" alt="cone"></a>
+        <a href="#coneEmpty" id="btnCone"><img class="btn" src="assets/cone-1.png" alt="cone"></a>
+        <a href="#coneRecEmpty" id="btnRecCone"><img class="btn" src="assets/cone-2.png" alt="cone"></a>
       </div>
     
       <h2>Choose your flavor :</h2>
       <div class="link-wrapper">
-        <a href="#flav-lemon" id="btnFlavLemon"><img class="btn" src="assets/flav-lemon.png" alt="flavour-lemon"></a>
-        <a href="#flav-strawberry" id="btnFlavStrawberry"><img class="btn" src="assets/flav-strawberry.png" alt="flavour-strawberry"></a>
-        <a href="#flav-choco" id="btnFlavChoco"><img class="btn" src="assets/flav-choco.png" alt="flavour-chocolate"></a>
+        <a href="#coneFlavLemon" id="btnFlavLemon"><img class="btn" src="assets/flav-lemon.png" alt="flavour-lemon"></a>
+        <a href="#coneFlavStrawberry" id="btnFlavStrawberry"><img class="btn" src="assets/flav-strawberry.png" alt="flavour-strawberry"></a>
+        <a href="#coneFlavChoco" id="btnFlavChoco"><img class="btn" src="assets/flav-choco.png" alt="flavour-chocolate"></a>
       </div>
   
     </aside>
@@ -62,6 +69,7 @@
     let lastShapeButtonClicked = document.getElementById('btnCone');
 
     function changeCone(event) {
+      console.log('elementToShow');
      
       let elementToShow = '#cone' + event.target.dataset.shape;
 
@@ -79,26 +87,26 @@
       lastShapeButtonClicked = event.target;
     }
 
-    document.getElementById('btnFlavLemon').addEventListener('click', changeFlav);
-    document.getElementById('btnFlavStrawberry').addEventListener('click', changeFlav);
-    document.getElementById('btnFlavChoco').addEventListener('click', changeFlav);
+    // document.getElementById('btnFlavLemon').addEventListener('click', changeFlav);
+    // document.getElementById('btnFlavStrawberry').addEventListener('click', changeFlav);
+    // document.getElementById('btnFlavChoco').addEventListener('click', changeFlav);
 
-    let lastColorButtonClicked = document.getElementById('btnFlavLemon');
+    // let lastColorButtonClicked = document.getElementById('btnFlavLemon');
    
-    function changeFlav(event) {
-      let falavToUse = event.target.dataset.color;
-      gsap.to('.cone-screen', { fill: falavToUse, duration: .25 });
+    // function changeFlav(event) {
+    //   let falavToUse = event.target.dataset.color;
+    //   gsap.to('.cone-screen', { fill: falavToUse, duration: .25 });
 
 
-      if (lastColorButtonClicked) {
+    //   if (lastColorButtonClicked) {
        
-        lastColorButtonClicked.classList.remove('active');
-      }
+    //     lastColorButtonClicked.classList.remove('active');
+    //   }
       
-      event.target.classList.add('active');
+    //   event.target.classList.add('active');
       
-      lastColorButtonClicked = event.target;
-    }
+    //   lastColorButtonClicked = event.target;
+    // }
 
   </script>
 
