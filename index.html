@@ -10,7 +10,7 @@
 <body>
   <div class="content-wrapper">
 
-    <main class="main-screen">
+    <main>
       <article id="cone-display" class="cone-screen">
         <h1>Choose a cone</h1>
         <img class="cone-choice-result" id="coneEmpty" src="assets/cone-emty.png" alt="cone">
@@ -23,25 +23,6 @@
         <img class="cone-choice-result" id="coneFlavRecChoco" src="assets/cone-rec-choco.png" alt="flav-rec-chocolate">
 
       </article>
-<!-- 
-      <article id="flav-lemon" class="cone-screen">
-        <img class="choice-result" src="assets/cone-lemon.png" alt="flav-lemon">
-        <h1>Lemon</h1>
-
-      </article>
-
-      <article id="flav-strawberry" class="cone-screen">
-        <img class="choice-result" src="assets/cone-strawberry.png" alt="flav-strawberry">
-        <h1>strawberry</h1>
-
-      </article>
-
-      <article id="flav-choco" class="cone-screen">
-        <img class="choice-result" src="assets/cone-choco.png" alt="flav-chocolate">
-        <h1>Chocolate</h1>
-
-      </article> -->
-
     </main>
 
     <aside>
@@ -62,53 +43,7 @@
     </aside>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"></script>
-  <script>
-    document.getElementById('btnCone').addEventListener('click', changeCone);
-    document.getElementById('btnRecCone').addEventListener('click', changeCone);
-
-    let lastShapeButtonClicked = document.getElementById('btnCone');
-
-    function changeCone(event) {
-      console.log('elementToShow');
-     
-      let elementToShow = '#cone' + event.target.dataset.shape;
-
-      gsap.to('.choice-result', { opacity: 0, duration: .25 });
-      gsap.to(elementToShow, { opacity: 1, duration: .25, delay: .25 });
-
-   
-      if (lastShapeButtonClicked) {
-        
-        lastShapeButtonClicked.classList.remove('active');
-      }
-     
-      event.target.classList.add('active');
-      
-      lastShapeButtonClicked = event.target;
-    }
-
-    // document.getElementById('btnFlavLemon').addEventListener('click', changeFlav);
-    // document.getElementById('btnFlavStrawberry').addEventListener('click', changeFlav);
-    // document.getElementById('btnFlavChoco').addEventListener('click', changeFlav);
-
-    // let lastColorButtonClicked = document.getElementById('btnFlavLemon');
-   
-    // function changeFlav(event) {
-    //   let falavToUse = event.target.dataset.color;
-    //   gsap.to('.cone-screen', { fill: falavToUse, duration: .25 });
-
-
-    //   if (lastColorButtonClicked) {
-       
-    //     lastColorButtonClicked.classList.remove('active');
-    //   }
-      
-    //   event.target.classList.add('active');
-      
-    //   lastColorButtonClicked = event.target;
-    // }
-
-  </script>
+  
 
 
 

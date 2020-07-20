@@ -10,7 +10,7 @@
 }
 * {
   box-sizing: border-box;
-  /* border: 1px solid red; */
+  border: 1px solid red;
 }
 
 body {
@@ -42,9 +42,105 @@ h1 {
 
 img {
   display: block;
+  
 }
 
 .content-wrapper {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  
+}
+
+main , aside {
+  padding: 2em;
+ 
+}
+
+main {
+  width: 60%;
+  height: 100vh;
+}
+
+aside {
+  width: 40%;
+  height: 100vh;
+}
+@media (max-width: 600px) {
+  aside {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  main , aside {
+    width: 100%;
+  
+  }
+}
+.cone-screen {
+  position: relative;
+  text-align: center;
+}
+.cone-choice-result {
+  margin: 0 auto;
+  max-width: 400px;
+  position: absolute;
+  
+}
+
+.link-wrapper {
+  margin-bottom: 4em;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  
+}
+@media (max-width: 600px) {
+  .link-wrapper {
+
+    justify-content: center;
+    flex-wrap: nowrap;
+    
+  }
+}
+.link-wrapper a {
+  padding: 2em 1em;
+}
+.btn {
+  padding: 1.25em;
+  max-width: 6em;
+  
+  border-radius: 50%;
+  background-color: var(--primary-color-purble-light);
+  transition: all 200ms ease-out 200ms;
+
+}
+@media (max-width: 465px) {
+  .btn {
+    padding: .8em;
+    max-width: 5em;
+  }
+}
+.btn:hover {
+  transform: scale(1.05);
+  transition: all 200ms ease-in 200ms;
+  box-shadow: 15px 9px 35px -14px var(--text-color-purble-dark);
+  background-color: var(--primary-color-purble-dark);
+  
+}
+.btn.active {
+  border: 2px solid var(--text-color-purble-dark);
+  box-shadow: 15px 9px 35px -14px var(--text-color-purble-dark);
+  background-color: var(--primary-color-purble-dark);
+}
+
+
+/* .content-wrapper {
   max-width: 100%;
   display: flex;
   flex-flow: row wrap;
@@ -90,7 +186,7 @@ img {
   top: center;
   left: center;
   text-align: center;
-  /* opacity: 0; */
+  
   
 }
 
@@ -101,7 +197,7 @@ aside{
   right: 0;
 }
 @media (max-width: 600px) {
-  aside{
+  aside {
     position: absolute;
     top: 33em;
     text-align: center;
@@ -155,6 +251,6 @@ aside{
   border: 2px solid var(--text-color-purble-dark);
   box-shadow: 15px 9px 35px -14px var(--text-color-purble-dark);
   background-color: var(--primary-color-purble-dark);
-}
+} */
 
   
