@@ -48,8 +48,7 @@ img {
   max-width: 100%;
   display: flex;
   flex-flow: row wrap;
-  overflow: hidden;
-
+ 
 }
 
 .content-wrapper > * {
@@ -70,11 +69,12 @@ img {
 }
 
 .cone-screen {
+  margin: 0;
   padding: 4em;
   width: 60%; 
   height: 100vh;
 
-  position: absolute;
+  position: relative;
 }
 @media (max-width: 600px) {
   .cone-screen {
@@ -90,7 +90,7 @@ img {
   top: center;
   left: center;
   text-align: center;
-  opacity: 0;
+  /* opacity: 0; */
   
 }
 
