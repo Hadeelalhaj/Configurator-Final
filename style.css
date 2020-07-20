@@ -94,6 +94,9 @@ img {
     max-width: 100%;
   }
 }
+.second-option {
+  position: absolute;
+}
 
 aside{
   padding: 4em;
@@ -151,6 +154,11 @@ aside{
   box-shadow: 15px 9px 35px -14px var(--text-color-purble-dark);
   background-color: var(--primary-color-purble-dark);
   
+}
+.btn.active {
+  border: 2px solid var(--text-color-purble-dark);
+  box-shadow: 15px 9px 35px -14px var(--text-color-purble-dark);
+  background-color: var(--primary-color-purble-dark);
 }
 
   
