@@ -28,15 +28,15 @@
   
       <h2>Choose your biscuit :</h2>
       <div class="link-wrapper">
-        <a href="#coneEmpty" id="btnCone"><img class="btn active" data-cone="Cone" src="assets/cone-1.png" alt="cone"></a>
-        <a href="#coneRecEmpty" id="btnRecCone"><img class="btn active" data-cone="Reccone" src="assets/cone-2.png" alt="cone"></a>
+        <a href="#coneEmpty" id="btnCone" data-cone="Cone"><img class="btn active" src="assets/cone-1.png" alt="cone"></a>
+        <a href="#coneRecEmpty" id="btnRecCone" data-cone="Reccone"><img class="btn active"  src="assets/cone-2.png" alt="cone"></a>
       </div>
     
       <h2>Choose your flavor :</h2>
       <div class="link-wrapper">
-        <a href="#coneFlavLemon" id="btnFlavLemon"><img class="btn active" data-flav="Lemon" src="assets/flav-lemon.png" alt="flavour-lemon"></a>
-        <a href="#coneFlavStrawberry" id="btnFlavStrawberry"><img class="btn active" data-flav="Strawberry" src="assets/flav-strawberry.png" alt="flavour-strawberry"></a>
-        <a href="#coneFlavChoco" id="btnFlavChoco"><img class="btn active" data-flav="Choco" src="assets/flav-choco.png" alt="flavour-chocolate"></a>
+        <a href="#coneFlavLemon" id="btnFlavLemon" data-flav="Lemon"><img class="btn active" src="assets/flav-lemon.png" alt="flavour-lemon"></a>
+        <a href="#coneFlavStrawberry" id="btnFlavStrawberry" data-flav="Strawberry"><img class="btn active"  src="assets/flav-strawberry.png" alt="flavour-strawberry"></a>
+        <a href="#coneFlavChoco" id="btnFlavChoco" data-flav="Choco"><img class="btn active"  src="assets/flav-choco.png" alt="flavour-chocolate"></a>
       </div>
   
     </aside>
@@ -62,9 +62,27 @@
       lastConeButtonClicked = event.target;
     }
 
-    document.getElementById('buttonYellow').addEventListener('click', changeColor);
-    document.getElementById('buttonGreen').addEventListener('click', changeColor);
-    document.getElementById('buttonPink').addEventListener('click', changeColor);
+    document.getElementById('btnFlavLemon').addEventListener('click', changeFlav);
+    document.getElementById('btnFlavStrawberry').addEventListener('click', changeFlav);
+    document.getElementById('btnFlavChoco').addEventListener('click', changeFlav);
+
+    let lastFlavButtonClicked = document.getElementById('btnFlavLemon');
+
+    function changeFlav(event) {
+      let flavToUse = event.target.dataset.flav;
+      gsap.to('.cone-choice-result', { opacity: 0, duration: .25 });
+
+    
+      if (lastFlavButtonClicked) {
+        
+        lastFlavButtonClicked.classList.remove('active');
+      }
+      
+      event.target.classList.add('active');
+      
+      lastColorButtonClicked = event.target;
+    }
+
 
 
 
