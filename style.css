@@ -57,6 +57,8 @@ main , aside {
 main {
   width: 60%;
   height: 100vh;
+  background-color: var(--primary-color-beige);
+
 }
 
 aside {
@@ -80,14 +82,28 @@ aside {
   height: 100%;
   position: relative;
   text-align: center;
+  
 }
 .cone-choice-result {
   margin: 0 auto;
-  max-width: 400px;
+  max-width: 300px;
+  
   position: absolute;
+  top: 250px;
+  left: 14em;
   
   opacity: 0;
   
+}
+.cone-choice-result-flavchoice {
+  margin: 0 auto;
+  max-width: 250px;
+  position: absolute;
+  top: 25px;
+  left: 15.5em;
+  
+  opacity: 1;
+
 }
 #coneEmpty {
   opacity: 1;
@@ -138,9 +154,30 @@ aside {
 .btn.active {
   box-shadow: 15px 9px 35px -14px var(--text-color-purble-dark);
   background-color: var(--primary-color-purble-dark);
+  
+}
+.pink {
+  background-color: pink;
+}
+.yellow {
+  background-color: yellow;
+}
+.brown {
+  background-color: brown;
 }
 
-
+.circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  position: absolute;
+  left: 14em;
+  top: 6em;
+  
+  
+  order: -1;
+  background-color: var(--primary-color-purble-light);
+}
 
 /* .content-wrapper {
   max-width: 100%;

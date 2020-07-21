@@ -12,15 +12,17 @@
 
     <main>
       <article id="cone-display" class="cone-screen">
-        <h1>Choose a cone</h1>
-        <img class="cone-choice-result" id="coneEmpty" src="assets/cone-emty.png" alt="cone">
-        <img class="cone-choice-result" id="coneRecEmpty" src="assets/cone-rec-emty.png" alt="cone-rec">
-        <img class="cone-choice-result" id="coneFlavLemon" src="assets/cone-lemon.png" alt="flav-lemon">
-        <img class="cone-choice-result" id="coneFlavRecLemon" src="assets/cone-rec-lemon.png" alt="cone-rec-lemon">
-        <img class="cone-choice-result" id="coneFlavStrawberry" src="assets/cone-strawberry.png" alt="flav-strawberry">
-        <img class="cone-choice-result" id="coneFlavRecStrawberry" src="assets/cone-rec-strawberry.png" alt="flav-rec-strawberry">
-        <img class="cone-choice-result" id="coneFlavChoco" src="assets/cone-choco.png" alt="flav-chocolate">
-        <img class="cone-choice-result" id="coneFlavRecChoco" src="assets/cone-rec-choco.png" alt="flav-rec-chocolate">
+        <h1>Choose Your Icecream</h1>
+        <div>
+          <div class="circle"></div>
+          <img class="cone-choice-result" id="coneEmpty" src="assets/cone-emty.png" alt="cone">
+          <img class="cone-choice-result" id="coneRecEmpty" src="assets/cone-rec-emty.png" alt="cone-rec">
+
+          <img class="cone-choice-result-flavchoice" id="coneFlavLemon" src="assets/cone-lemon.png" alt="flav-lemon">
+          <img class="cone-choice-result-flavchoice" id="coneFlavStrawberry" src="assets/cone-strawberry.png" alt="flav-strawberry">
+          <img class="cone-choice-result-flavchoice" id="coneFlavChoco" src="assets/cone-choco.png" alt="flav-chocolate">
+        </div>
+       
       </article>
     </main>
 
@@ -28,15 +30,15 @@
   
       <h2>Choose your biscuit :</h2>
       <div class="link-wrapper">
-        <a href="#coneEmpty" id="btnCone" data-cone="Empty"><img class="btn active" src="assets/cone-1.png" alt="Empty"></a>
-        <a href="#coneRecEmpty" id="btnRecCone" data-cone="RecEmpty"><img class="btn active" src="assets/cone-2.png" alt="RecEmpty"></a>
+        <a href="#coneEmpty" id="btnCone" data-cone="Empty"><img class="btn" src="assets/cone-1.png" alt="Empty"></a>
+        <a href="#coneRecEmpty" id="btnRecCone" data-cone="RecEmpty"><img class="btn" src="assets/cone-2.png" alt="RecEmpty"></a>
       </div>
     
       <h2>Choose your flavor :</h2>
       <div class="link-wrapper">
-        <a href="#coneFlavLemon" id="btnFlavLemon" data-flav="Lemon"><img class="btn active" src="assets/flav-lemon.png" alt="Lemon"></a>
-        <a href="#coneFlavStrawberry" id="btnFlavStrawberry" data-flav="Strawberry"><img class="btn active"  src="assets/flav-strawberry.png" alt="Strawberry"></a>
-        <a href="#coneFlavChoco" id="btnFlavChoco" data-flav="Choco"><img class="btn active"  src="assets/flav-choco.png" alt="Chocolate"></a>
+        <a href="#coneFlavLemon" id="btnFlavLemon" data-flav="Lemon"><img class="btn" src="assets/flav-lemon.png" alt="Lemon"></a>
+        <a href="#coneFlavStrawberry" id="btnFlavStrawberry" data-flav="Strawberry"><img class="btn"  src="assets/flav-strawberry.png" alt="Strawberry"></a>
+        <a href="#coneFlavChoco" id="btnFlavChoco" data-flav="Choco"><img class="btn"  src="assets/flav-choco.png" alt="Choco"></a>
       </div>
   
     </aside>
@@ -62,6 +64,7 @@
       lastConeButtonClicked = event.target;
     }
 
+
     document.getElementById('btnFlavLemon').addEventListener('click', changeFlav);
     document.getElementById('btnFlavStrawberry').addEventListener('click', changeFlav);
     document.getElementById('btnFlavChoco').addEventListener('click', changeFlav);
@@ -70,33 +73,23 @@
 
     function changeFlav(event) {
 
-      let flavToUse = event.target.alt;
+      let flavToUse = '#coneFlav' + event.target.alt;
 
-      gsap.to('.cone-choice-result', { opacity: 0, duration: .25 });
+      gsap.to('.cone-choice-result-flavchoice', { opacity: 0, duration: .25 });
+      gsap.to(flavToUse, { opacity: 1, duration: .25, delay: .25 });
 
     
       if (lastFlavButtonClicked) {
         
         lastFlavButtonClicked.classList.remove('active');
       }
-      
+
       event.target.classList.add('active');
       
-      lastColorButtonClicked = event.target;
+      lastFlavButtonClicked = event.target;
     }
 
-
-
-
   </script>
-  
-
-
-
-
-
-
-
-  
+ 
 </body>
 </html>
