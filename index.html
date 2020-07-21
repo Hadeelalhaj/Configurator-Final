@@ -14,7 +14,7 @@
       <article id="cone-display" class="cone-screen">
         <h1>Choose a cone</h1>
         <img class="cone-choice-result" id="coneEmpty" src="assets/cone-emty.png" alt="cone">
-        <img class="cone-choice-result" id="coneRecEempty" src="assets/cone-rec-emty.png" alt="cone-rec">
+        <img class="cone-choice-result" id="coneRecEmpty" src="assets/cone-rec-emty.png" alt="cone-rec">
         <img class="cone-choice-result" id="coneFlavLemon" src="assets/cone-lemon.png" alt="flav-lemon">
         <img class="cone-choice-result" id="coneFlavRecLemon" src="assets/cone-rec-lemon.png" alt="cone-rec-lemon">
         <img class="cone-choice-result" id="coneFlavStrawberry" src="assets/cone-strawberry.png" alt="flav-strawberry">
@@ -28,15 +28,15 @@
   
       <h2>Choose your biscuit :</h2>
       <div class="link-wrapper">
-        <a href="#coneEmpty" id="btnCone" data-cone="Cone"><img class="btn active" src="assets/cone-1.png" alt="cone"></a>
-        <a href="#coneRecEmpty" id="btnRecCone" data-cone="Reccone"><img class="btn active"  src="assets/cone-2.png" alt="cone"></a>
+        <a href="#coneEmpty" id="btnCone" data-cone="Empty"><img class="btn active" src="assets/cone-1.png" alt="Empty"></a>
+        <a href="#coneRecEmpty" id="btnRecCone" data-cone="RecEmpty"><img class="btn active" src="assets/cone-2.png" alt="RecEmpty"></a>
       </div>
     
       <h2>Choose your flavor :</h2>
       <div class="link-wrapper">
-        <a href="#coneFlavLemon" id="btnFlavLemon" data-flav="Lemon"><img class="btn active" src="assets/flav-lemon.png" alt="flavour-lemon"></a>
-        <a href="#coneFlavStrawberry" id="btnFlavStrawberry" data-flav="Strawberry"><img class="btn active"  src="assets/flav-strawberry.png" alt="flavour-strawberry"></a>
-        <a href="#coneFlavChoco" id="btnFlavChoco" data-flav="Choco"><img class="btn active"  src="assets/flav-choco.png" alt="flavour-chocolate"></a>
+        <a href="#coneFlavLemon" id="btnFlavLemon" data-flav="Lemon"><img class="btn active" src="assets/flav-lemon.png" alt="Lemon"></a>
+        <a href="#coneFlavStrawberry" id="btnFlavStrawberry" data-flav="Strawberry"><img class="btn active"  src="assets/flav-strawberry.png" alt="Strawberry"></a>
+        <a href="#coneFlavChoco" id="btnFlavChoco" data-flav="Choco"><img class="btn active"  src="assets/flav-choco.png" alt="Chocolate"></a>
       </div>
   
     </aside>
@@ -49,8 +49,8 @@
     let lastConeButtonClicked = document.getElementById('btnCone');
 
     function changeCone(event) {
-      let elementToShow = '#cone' + event.target.dataset.cone;
-
+      let elementToShow = '#cone' + event.target.alt;
+      console.log(event.target.alt);
       gsap.to('.cone-choice-result', { opacity: 0, duration: .25 });
       gsap.to(elementToShow, { opacity: 1, duration: .25, delay: .25 });
 
@@ -69,7 +69,9 @@
     let lastFlavButtonClicked = document.getElementById('btnFlavLemon');
 
     function changeFlav(event) {
-      let flavToUse = event.target.dataset.flav;
+
+      let flavToUse = event.target.alt;
+
       gsap.to('.cone-choice-result', { opacity: 0, duration: .25 });
 
     
